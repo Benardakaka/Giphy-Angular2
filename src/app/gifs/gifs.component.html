@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Giphy Search </a>
+      </div>
+  
+      <div class="row">
+        <div class="col mt-2 ml-6"><input class="form-control" name="search" #searchTerm placeholder="search here"></div>
+        <div class="col ml-0"><button type="button" class="btn btn-secondary" (click)="performSearch(searchTerm)">Search</button></div>
+  
+      </div>
+    </div>
+  </nav>
+  <div class="row mt-3">
+    <div class="col-md-3 mb-2 d-flex align-items-stretch" *ngFor='let gif of gifs'>
+      <div class="card">
+        <div>
+          <img src="{{gif.imgPath}}"
+          class="card-img-top"
+            alt="">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ gif.username}}</h4>
+          <p class="card-text">{{ gif.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
